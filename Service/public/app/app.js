@@ -283,9 +283,9 @@ angular.module('SimpleRESTWebsite', ['angular-storage', 'ui.router', 'backand', 
         service.isEditing = false;
     }
 
-    function email() {
+    function email(serviceId) {
         debugger;
-        $http.get("https://api.backand.com:8079/1/table/action/Service/1?name=Email&parameters=%7B%7D");
+        $http.get("https://api.backand.com:8079/1/table/action/Service/" + serviceId + "?name=Email");
 
     }
 
