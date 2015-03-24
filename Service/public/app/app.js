@@ -20,7 +20,6 @@ angular.module('SimpleRESTWebsite', ['angular-storage', 'ui.router', 'backand', 
             controllerAs: 'service'
         })        
         ;
-        debugger;
         $urlRouterProvider.otherwise('/dashboard');
         $urlRouterProvider.otherwise('/service');
 
@@ -126,7 +125,6 @@ angular.module('SimpleRESTWebsite', ['angular-storage', 'ui.router', 'backand', 
 
 
     .controller('LoginCtrl', function ($rootScope, $state, Backand, $cookieStore, UserService) {
-        debugger;
         var login = this;
 
         function signin() {
@@ -283,10 +281,11 @@ angular.module('SimpleRESTWebsite', ['angular-storage', 'ui.router', 'backand', 
         service.isEditing = false;
     }
 
-    function email(serviceId) {
-        debugger;
-        $http.get("https://api.backand.com:8079/1/table/action/Service/" + serviceId + "?name=Email");
+    
+    function email(id) {
+     
 
+        $http.get("https://api.backand.com:8079/1/table/action/Service/" + id + "?name=Email&parameters=%7B%7D");
     }
 
     service.Service = [];
